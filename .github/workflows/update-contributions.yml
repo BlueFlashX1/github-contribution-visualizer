@@ -2,9 +2,24 @@ name: Update Contribution Visualization
 
 on:
   schedule:
-    # Run daily at 00:00 UTC
+    # Run hourly for near real-time updates across all repos
+    - cron: '0 * * * *'
+    # Daily backup (runs at 00:00 UTC)
     - cron: '0 0 * * *'
   workflow_dispatch: # Allow manual trigger
+  repository_dispatch:
+    # Can be triggered via API: curl -X POST -H "Authorization: token TOKEN" \
+    #   https://api.github.com/repos/USER/REPO/dispatches -d '{"event_type":"update-contributions"}'
+    types: [update-contributions]
+  # Real-time triggers - updates when you have activity in THIS repo
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, closed, merged]
+  issues:
+    types: [opened, closed]
+  issue_comment:
+    types: [created]
 
 jobs:
   generate-contributions:
