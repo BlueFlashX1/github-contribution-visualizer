@@ -24,14 +24,18 @@ class LanguageStatsGenerator:
         language_bytes = defaultdict(int)
 
         print("Fetching repositories...")
-        # Try to get all repos (public + private)
-        # If GITHUB_TOKEN doesn't have access, fall back to public only
+        # Get all accessible repos (public + private if token has access)
         try:
-            repos = list(self.user.get_repos(sort="updated"))
+            # Try to get all repos including private
+            repos = list(self.user.get_repos())
         except Exception as e:
             print(f"Warning: Could not fetch all repos: {e}")
             print("Falling back to public repos only...")
-            repos = list(self.user.get_repos(type="public", sort="updated"))
+            try:
+                repos = list(self.user.get_repos(type="public"))
+            except Exception as e2:
+                print(f"Error fetching public repos: {e2}")
+                return {}
         
         print(f"Found {len(repos)} repositories")
 

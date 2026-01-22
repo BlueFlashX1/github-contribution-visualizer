@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # Required to read private repo data
+      metadata: read
 
     steps:
       - name: Checkout repository
