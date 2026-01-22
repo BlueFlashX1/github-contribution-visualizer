@@ -131,7 +131,7 @@ class LanguageStatsGenerator:
   <rect x="0" y="0" width="{width}" height="{total_height}" fill="{card_bg}" rx="8" stroke="{border}" stroke-width="1"/>
 
   <!-- Title -->
-  <text x="{padding}" y="{padding + 20}" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="{text_primary}">
+  <text x="{padding}" y="{padding + 15}" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="{text_primary}" dominant-baseline="middle">
     Top Languages
   </text>
 
