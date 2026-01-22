@@ -26,7 +26,7 @@ The standard GitHub contribution graph only shows commit frequency, which reward
 3. **Choose your style**:
    - Card style (default): `generate_contributions_simple.py`
    - Heatmap style: `generate_contributions.py`
-   
+
    Edit `.github/workflows/update-contributions.yml` to switch styles.
 
 4. **Run the workflow**:
