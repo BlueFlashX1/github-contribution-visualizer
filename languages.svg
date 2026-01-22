@@ -29,7 +29,7 @@
     <rect x="15" y="35" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="35" width="294.1388339822371" height="8" fill="#E34F26" rx="4"/>
+    <rect x="15" y="35" width="294.1387183427962" height="8" fill="#E34F26" rx="4"/>
     <!-- JavaScript -->
     <rect x="0" y="62" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -47,7 +47,7 @@
     <rect x="15" y="97" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="97" width="158.50320006046584" height="8" fill="#F7DF1E" rx="4"/>
+    <rect x="15" y="97" width="158.50313774560186" height="8" fill="#F7DF1E" rx="4"/>
     <!-- Jupyter Notebook -->
     <rect x="0" y="124" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -65,7 +65,7 @@
     <rect x="15" y="159" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="159" width="83.92084733956673" height="8" fill="#DA5B0B" rx="4"/>
+    <rect x="15" y="159" width="83.92081434643985" height="8" fill="#DA5B0B" rx="4"/>
     <!-- Python -->
     <rect x="0" y="186" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -83,7 +83,7 @@
     <rect x="15" y="221" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="221" width="20.50341157297786" height="8" fill="#3776AB" rx="4"/>
+    <rect x="15" y="221" width="20.5036354681575" height="8" fill="#3776AB" rx="4"/>
     <!-- CSS -->
     <rect x="0" y="248" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -101,7 +101,7 @@
     <rect x="15" y="283" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="283" width="17.803268595630634" height="8" fill="#1572B6" rx="4"/>
+    <rect x="15" y="283" width="17.80326159635074" height="8" fill="#1572B6" rx="4"/>
     <!-- Go -->
     <rect x="0" y="310" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -119,7 +119,7 @@
     <rect x="15" y="345" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="345" width="9.88852052207028" height="8" fill="#00ADD8" rx="4"/>
+    <rect x="15" y="345" width="9.88851663444018" height="8" fill="#00ADD8" rx="4"/>
     <!-- Shell -->
     <rect x="0" y="372" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -137,7 +137,7 @@
     <rect x="15" y="407" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="407" width="4.163669993696889" height="8" fill="#89E051" rx="4"/>
+    <rect x="15" y="407" width="4.163668356767606" height="8" fill="#89E051" rx="4"/>
     <!-- Lua -->
     <rect x="0" y="434" width="620" height="50" fill="#1c2128" rx="6"/>
 
@@ -155,11 +155,11 @@
     <rect x="15" y="469" width="590" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="469" width="0.8613109903257598" height="8" fill="#000080" rx="4"/>
+    <rect x="15" y="469" width="0.8613106517049799" height="8" fill="#000080" rx="4"/>
   </g>
 
   <!-- Footer -->
   <text x="660" y="584" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b949e" text-anchor="end">
-    7 repos • Public & Private
+    7 repos • Public &amp; Private
   </text>
 </svg>
