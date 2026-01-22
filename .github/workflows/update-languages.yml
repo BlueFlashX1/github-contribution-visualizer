@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      # Required to read private repo data
-      metadata: read
 
     steps:
       - name: Checkout repository
@@ -31,8 +29,10 @@ jobs:
 
       - name: Generate languages card
         env:
-          # Use PAT_TOKEN if available (for private repos), otherwise GITHUB_TOKEN (public only)
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          # For private repos: Create PAT with 'repo' scope and add as secret 'PAT_TOKEN'
+          # Then change below to: GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          # Default GITHUB_TOKEN only has access to public repos
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python generate_languages.py
 
