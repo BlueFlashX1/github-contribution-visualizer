@@ -99,7 +99,7 @@ class SimpleContributionVisualizer:
         accent = "#58a6ff"
         success = "#3fb950"
 
-        width = 600
+        width = 700
         height = 280
 
         svg = f"""<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
@@ -124,38 +124,38 @@ class SimpleContributionVisualizer:
   <!-- Metrics Grid -->
   <g transform="translate(40, 80)">
     <!-- PRs Merged -->
-    <rect x="0" y="0" width="130" height="90" fill="#0e4429" rx="6"/>
-    <text x="65" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{success}" text-anchor="middle" dominant-baseline="middle">
+    <rect x="0" y="0" width="145" height="90" fill="#0e4429" rx="6"/>
+    <text x="72.5" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{success}" text-anchor="middle" dominant-baseline="middle">
       {metrics['prs_merged']}
     </text>
-    <text x="65" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
+    <text x="72.5" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
       PRs Merged
     </text>
 
     <!-- PRs Opened -->
-    <rect x="145" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
-    <text x="210" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{accent}" text-anchor="middle" dominant-baseline="middle">
+    <rect x="160" y="0" width="145" height="90" fill="#1c2128" rx="6"/>
+    <text x="232.5" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{accent}" text-anchor="middle" dominant-baseline="middle">
       {metrics['prs_opened']}
     </text>
-    <text x="210" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
+    <text x="232.5" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
       PRs Opened
     </text>
 
     <!-- Reviews -->
-    <rect x="290" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
-    <text x="355" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{accent}" text-anchor="middle" dominant-baseline="middle">
+    <rect x="320" y="0" width="145" height="90" fill="#1c2128" rx="6"/>
+    <text x="392.5" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{accent}" text-anchor="middle" dominant-baseline="middle">
       {metrics['reviews']}
     </text>
-    <text x="355" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
+    <text x="392.5" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
       Reviews
     </text>
 
     <!-- Issues -->
-    <rect x="435" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
-    <text x="500" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{text_primary}" text-anchor="middle" dominant-baseline="middle">
+    <rect x="480" y="0" width="145" height="90" fill="#1c2128" rx="6"/>
+    <text x="552.5" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="{text_primary}" text-anchor="middle" dominant-baseline="middle">
       {metrics['issues']}
     </text>
-    <text x="500" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
+    <text x="552.5" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="{text_secondary}" text-anchor="middle">
       Issues
     </text>
   </g>
