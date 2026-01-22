@@ -29,8 +29,8 @@ jobs:
 
       - name: Generate languages card
         env:
-          # GITHUB_TOKEN has access to private repos in Actions
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Use PAT_TOKEN if available (for private repos), otherwise GITHUB_TOKEN (public only)
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           python generate_languages.py
 
