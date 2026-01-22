@@ -140,28 +140,33 @@ class LanguageStatsGenerator:
 """
 
         y_offset = 0
+        # Fixed width for percentage area to ensure consistent right alignment
+        percentage_width = 70
+        content_width = width - (padding * 2)
+        text_y_center = y_offset + box_height / 2
+        
         for lang, bytes_count, percentage in top_languages:
             color = language_colors.get(lang, "#58a6ff")
 
             # Language name and percentage
             svg += f"""    <!-- {lang} -->
-    <rect x="0" y="{y_offset}" width="{width - (padding * 2)}" height="{box_height}" fill="#1c2128" rx="6"/>
+    <rect x="0" y="{y_offset}" width="{content_width}" height="{box_height}" fill="#1c2128" rx="6"/>
 
     <!-- Language name -->
-    <text x="15" y="{y_offset + 25}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="{text_primary}" dominant-baseline="middle">
+    <text x="15" y="{text_y_center}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="{text_primary}" dominant-baseline="middle" text-anchor="start">
       {lang}
     </text>
 
-    <!-- Percentage -->
-    <text x="{width - (padding * 2) - 15}" y="{y_offset + 25}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="{text_secondary}" text-anchor="end" dominant-baseline="middle">
+    <!-- Percentage - fixed width area for consistent alignment -->
+    <text x="{content_width - 15}" y="{text_y_center}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="{text_secondary}" text-anchor="end" dominant-baseline="middle">
       {percentage:.1f}%
     </text>
 
     <!-- Progress bar background -->
-    <rect x="15" y="{y_offset + 35}" width="{width - (padding * 2) - 30}" height="8" fill="#0d1117" rx="4"/>
+    <rect x="15" y="{y_offset + 36}" width="{content_width - 30}" height="8" fill="#0d1117" rx="4"/>
 
     <!-- Progress bar fill -->
-    <rect x="15" y="{y_offset + 35}" width="{(width - (padding * 2) - 30) * (percentage / 100)}" height="8" fill="{color}" rx="4"/>
+    <rect x="15" y="{y_offset + 36}" width="{(content_width - 30) * (percentage / 100)}" height="8" fill="{color}" rx="4"/>
 """
 
             y_offset += box_height + spacing
