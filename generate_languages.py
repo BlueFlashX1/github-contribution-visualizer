@@ -119,7 +119,8 @@ class LanguageStatsGenerator:
             title_height
             + (len(top_languages) * (box_height + spacing))
             - spacing
-            + (padding * 2)
+            + padding
+            + 20  # Bottom padding
         )
 
         svg = f"""<svg width="{width}" height="{total_height}" xmlns="http://www.w3.org/2000/svg">
@@ -165,17 +166,7 @@ class LanguageStatsGenerator:
 
             y_offset += box_height + spacing
 
-        # Footer
-        # Get repo count (cache it to avoid multiple API calls)
-        if not hasattr(self, "_repo_count"):
-            self._repo_count = len(list(self.user.get_repos()))
-        repo_count = self._repo_count
-        svg += f"""  </g>
-
-  <!-- Footer -->
-  <text x="{width - padding}" y="{total_height - padding}" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="{text_secondary}" text-anchor="end">
-    {repo_count} repos • Public &amp; Private
-  </text>
+        svg += """  </g>
 </svg>"""
 
         return svg
