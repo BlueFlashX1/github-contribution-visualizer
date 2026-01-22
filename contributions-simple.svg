@@ -1,89 +1,74 @@
-<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="280" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#3fb950;stop-opacity:1" />
     </linearGradient>
   </defs>
-  
+
   <!-- Background -->
-  <rect width="600" height="300" fill="#0d1117" rx="8"/>
-  
+  <rect width="600" height="280" fill="#0d1117" rx="8"/>
+
   <!-- Card -->
-  <rect x="20" y="20" width="560" height="260" fill="#161b22" rx="8" stroke="#30363d" stroke-width="1"/>
-  
+  <rect x="20" y="20" width="560" height="240" fill="#161b22" rx="8" stroke="#30363d" stroke-width="1"/>
+
   <!-- Title -->
-  <text x="40" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#f0f6fc">
-    Real Contributions
+  <text x="40" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#f0f6fc">
+    Contributions
   </text>
-  <text x="40" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e">
-    Impact-weighted • Not just commit count
-  </text>
-  
+
   <!-- Metrics Grid -->
-  <g transform="translate(40, 100)">
+  <g transform="translate(40, 80)">
     <!-- PRs Merged -->
-    <rect x="0" y="0" width="120" height="80" fill="#0e4429" rx="6"/>
-    <text x="60" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#3fb950" text-anchor="middle">
+    <rect x="0" y="0" width="130" height="90" fill="#0e4429" rx="6"/>
+    <text x="65" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#3fb950" text-anchor="middle" dominant-baseline="middle">
       0
     </text>
-    <text x="60" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">
+    <text x="65" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">
       PRs Merged
     </text>
-    <text x="60" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">
-      5 pts each
-    </text>
-    
+
     <!-- PRs Opened -->
-    <rect x="140" y="0" width="120" height="80" fill="#1c2128" rx="6"/>
-    <text x="200" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#58a6ff" text-anchor="middle">
+    <rect x="145" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
+    <text x="210" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#58a6ff" text-anchor="middle" dominant-baseline="middle">
       0
     </text>
-    <text x="200" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">
+    <text x="210" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">
       PRs Opened
     </text>
-    <text x="200" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">
-      3 pts each
-    </text>
-    
+
     <!-- Reviews -->
-    <rect x="280" y="0" width="120" height="80" fill="#1c2128" rx="6"/>
-    <text x="340" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#58a6ff" text-anchor="middle">
+    <rect x="290" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
+    <text x="355" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#58a6ff" text-anchor="middle" dominant-baseline="middle">
       0
     </text>
-    <text x="340" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">
+    <text x="355" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">
       Reviews
     </text>
-    <text x="340" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">
-      2 pts each
-    </text>
-    
+
     <!-- Issues -->
-    <rect x="420" y="0" width="120" height="80" fill="#1c2128" rx="6"/>
-    <text x="480" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#f0f6fc" text-anchor="middle">
+    <rect x="435" y="0" width="130" height="90" fill="#1c2128" rx="6"/>
+    <text x="500" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#f0f6fc" text-anchor="middle" dominant-baseline="middle">
       0
     </text>
-    <text x="480" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b949e" text-anchor="middle">
+    <text x="500" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">
       Issues
     </text>
-    <text x="480" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">
-      1 pt each
-    </text>
   </g>
-  
+
   <!-- Impact Score -->
-  <g transform="translate(40, 220)">
-    <rect x="0" y="0" width="520" height="40" fill="url(#grad)" opacity="0.1" rx="6"/>
-    <text x="20" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b949e" dominant-baseline="middle">
-      Total Impact Score
+  <g transform="translate(40, 200)">
+    <rect x="0" y="0" width="520" height="35" fill="url(#grad)" opacity="0.1" rx="6"/>
+    <text x="20" y="17.5" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#8b949e" dominant-baseline="middle">
+      Impact Score
     </text>
-    <text x="500" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#58a6ff" text-anchor="end" dominant-baseline="middle">
+    <text x="500" y="17.5" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#58a6ff" text-anchor="end" dominant-baseline="middle">
       0
     </text>
   </g>
-  
+
   <!-- Footer -->
-  <text x="580" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8b949e" text-anchor="end">
+  <text x="580" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8b949e" text-anchor="end">
     0 repos • Last 365 days
   </text>
 </svg>
