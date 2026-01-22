@@ -29,10 +29,8 @@ jobs:
 
       - name: Generate languages card
         env:
-          # For private repos: Create PAT with 'repo' scope and add as secret 'PAT_TOKEN'
-          # Then change below to: GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          # Default GITHUB_TOKEN only has access to public repos
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Using PAT_TOKEN for access to both public and private repos
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: |
           python generate_languages.py
