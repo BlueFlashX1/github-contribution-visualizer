@@ -1,0 +1,49 @@
+name: Update Contribution Visualization
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  generate-contributions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install PyGithub requests
+
+      - name: Generate contribution visualization
+        env:
+          # Public repos only (default - no setup needed)
+          # To include private repos:
+          #   1. Create PAT with 'repo' scope
+          #   2. Add as secret named 'PAT_TOKEN'
+          #   3. Change below to: GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          OUTPUT_FILE: contributions-simple.svg
+          # Set to 'true' to include private repos (requires PAT_TOKEN secret)
+          INCLUDE_PRIVATE: 'false'
+        run: |
+          python generate_contributions_simple.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add contributions-simple.svg
+          git diff --staged --quiet || git commit -m "Update contribution visualization [skip ci]"
+          git push
