@@ -140,13 +140,11 @@ class LanguageStatsGenerator:
 """
 
         y_offset = 0
-        # Fixed width for percentage area to ensure consistent right alignment
-        percentage_width = 70
         content_width = width - (padding * 2)
-        text_y_center = y_offset + box_height / 2
-        
+
         for lang, bytes_count, percentage in top_languages:
             color = language_colors.get(lang, "#58a6ff")
+            text_y_center = y_offset + box_height / 2
 
             # Language name and percentage
             svg += f"""    <!-- {lang} -->
@@ -157,7 +155,7 @@ class LanguageStatsGenerator:
       {lang}
     </text>
 
-    <!-- Percentage - fixed width area for consistent alignment -->
+    <!-- Percentage - right-aligned for consistent alignment -->
     <text x="{content_width - 15}" y="{text_y_center}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="{text_secondary}" text-anchor="end" dominant-baseline="middle">
       {percentage:.1f}%
     </text>
