@@ -33,6 +33,7 @@ jobs:
           # Then change below to: GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           # Default GITHUB_TOKEN only has access to public repos
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
         run: |
           python generate_languages.py
 

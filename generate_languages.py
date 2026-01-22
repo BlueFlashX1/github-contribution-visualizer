@@ -14,10 +14,14 @@ from github import Github
 class LanguageStatsGenerator:
     """Generate language statistics from GitHub repositories."""
 
-    def __init__(self, token: str):
-        """Initialize with GitHub token."""
+    def __init__(self, token: str, username: str = None):
+        """Initialize with GitHub token and optional username."""
         self.github = Github(token)
-        self.user = self.github.get_user()
+        # Use provided username or get authenticated user
+        if username:
+            self.user = self.github.get_user(username)
+        else:
+            self.user = self.github.get_user()
 
     def get_language_stats(self) -> Dict[str, int]:
         """Get aggregated language statistics from all repos (public + private)."""
@@ -28,16 +32,16 @@ class LanguageStatsGenerator:
         try:
             # Try to get all repos including private
             repos = list(self.user.get_repos())
+            print(f"Found {len(repos)} repositories (public + private if accessible)")
         except Exception as e:
             print(f"Warning: Could not fetch all repos: {e}")
             print("Falling back to public repos only...")
             try:
                 repos = list(self.user.get_repos(type="public"))
+                print(f"Found {len(repos)} public repositories")
             except Exception as e2:
                 print(f"Error fetching public repos: {e2}")
                 return {}
-        
-        print(f"Found {len(repos)} repositories")
 
         for repo in repos:
             try:
@@ -198,7 +202,8 @@ def main():
         print("Error: GITHUB_TOKEN environment variable not set")
         return
 
-    generator = LanguageStatsGenerator(token)
+    username = os.getenv("GITHUB_USERNAME")
+    generator = LanguageStatsGenerator(token, username)
 
     print("Fetching language statistics...")
     language_stats = generator.get_language_stats()
