@@ -166,7 +166,10 @@ class LanguageStatsGenerator:
             y_offset += box_height + spacing
 
         # Footer
-        repo_count = len(list(self.user.get_repos(affiliation="owner")))
+        # Get repo count (cache it to avoid multiple API calls)
+        if not hasattr(self, '_repo_count'):
+            self._repo_count = len(list(self.user.get_repos()))
+        repo_count = self._repo_count
         svg += f"""  </g>
 
   <!-- Footer -->
