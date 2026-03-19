@@ -1,22 +1,75 @@
-# Python
+# ============================================================================
+# PYTHON - Cache & Compiled Files
+# ============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyd
 .Python
+
+# Virtual environments
 venv/
+.venv/
 env/
 ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+wheels/
+*.egg
+
+# Unit test / coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+.cache/
 
 # Output (workflow will commit these)
 # contributions*.svg
 
-# IDE
-.vscode/
-.idea/
+# ============================================================================
+# LOGS - All Log Files
+# ============================================================================
+logs/
+*.log
+*.log.*
+
+# ============================================================================
+# BUILD ARTIFACTS & TEMPORARY FILES
+# ============================================================================
+*.tmp
+*.temp
+*.bak
+*.backup
 *.swp
 *.swo
+*~
+.cache/
+.temp/
+tmp/
+temp/
 
-# OS
+# ============================================================================
+# IDE & OS FILES
+# ============================================================================
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# ============================================================================
+# DATABASE & DATA FILES
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
